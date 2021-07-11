@@ -1,0 +1,17 @@
+{
+    "name": "laura/p5",
+    "autoload": {
+        "psr-4": {
+            "Laura\\P5\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Laura",
+            "email": "lalyah@msn.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.3"
+    }
+}
