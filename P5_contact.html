@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="P1_01_codesource.css" />
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Webagency</title>
+    <title>Pixy</title>
     <script src="https://kit.fontawesome.com/7ee053dcb6.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,48 +16,28 @@
         <header>
             <div id="titre_principal">
                 <div id="logo">
-                    <img src="logocamera.png" alt="Logo Camera" />
+                    <img src="assets\images\logocamera.png" alt="Logo Camera" />
                 </div>
             </div>
+
             <nav class="menu">
                 <a class="link" href="#accueil">Accueil</a>
                 <a class="link" href="#commandes">Produit</a>
                 <a class="link" href="#map-contact">Contact</a>
-                <a class="link" href="#panier">Panier <i class="fas fa-shopping-basket"></i></a>    
+                <a class="link" href="#panier">Panier <i class="fas fa-shopping-basket"></i></a>   
             </nav>
+    </div>
         </header>
 
-<!--MAP-->
-
-    <div id="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10496.88643437743!2d2.3498256!3d48.8730518!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x30a290491097f07f!2sWebAgency!5e0!3m2!1sfr!2sfr!4v1577994392756!5m2!1sfr!2sfr"
-            style="border:0;" allowfullscreen=""></iframe>
-        <div class="filtrebleu"></div>
-
 <!--FORMULAIRE-->
-
-        <section id="formulaire">
-            <form method="post">
-                <h3>Contact info<br /></h3>
-
-                <div class="contactinfo">
-                    <strong>Pixy SAS</strong><br />25 Rue d'Hauteville 75010 Paris<br />
-                    <div class="number">
-                        <div class="tel">Tel:</div> 01 02 03 04 05
-                    </div>
-                </div>
-                <div class="formulaire">
-                    <div class="name"><input type="text" placeholder="Name"></div>
-                    <div class="email"><input type="email" placeholder="Email"></div>
-                    <div class="subject"><input type="text" placeholder="Subject"></div>
-                    <div class="message"><textarea placeholder="Message" rows="10" cols="30"></textarea>
-                    </div>
-                    <a href="#">Send Message</a>
-                </div>
+            <form>
+                <h7>Contactez-moi !</h7>
+                <input placeholder="Nom" tye="text"/>
+                <input placeholder="E-mail" type="text"/>
+                <input placeholder="Téléphone" type="text"/>
+                <button>Envoyer</button>
             </form>
-        </section>
-    </div>
+      
+    
 </body>
-
 </html>
