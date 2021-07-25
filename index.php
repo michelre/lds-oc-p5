@@ -2,17 +2,24 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/src/templates');
+$twig = new \Twig\Environment($loader, [
+    'cache' => false,
+]);
+
+
+
 $klein = new \Klein\Klein();
 
 
-$klein->with('/P5', function()  use ($klein){
+$klein->with('/P5', function()  use ($klein, $twig){
 
-    $klein->respond('GET', '/', function () {
-        return "Page d'accueil";
+    $klein->respond('GET', '/', function () use($twig) {
+        echo $twig->render('index.html.twig');
     });
     
-    $klein->respond('GET', '/products/[:id]', function ($request) {
-        return 'Page produit ' . $request->id;
+    $klein->respond('GET', '/products/[:id]', function ($request) use($twig) {
+        echo $twig->render('produit.html.twig', ['id' => $request->id]);
     });
 
     $klein->respond('GET', '/cart', function ($request) {

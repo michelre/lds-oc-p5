@@ -20,9 +20,9 @@
         /* bordure haut et Couleur petite barre noire liens du menu */
         font-size: 14px;
         /* hauteur menu sans clic */
-        padding-top: 27%;
+        padding-top: 5%;
         /* barre noir en haut du menu */
-        margin-top: 0%;
+        margin-top: 1%;
     }
 
     .link {
@@ -36,9 +36,7 @@
         padding: 38px 33px;
         font-size: 14px;
         /* hauteur menu avec clic */
-        padding-top: 31%;
-        padding-bottom: 27%;
-        margin-top: 0%;
+        padding-top: 7.1%;
     }
 
     .h1{
@@ -131,7 +129,7 @@
             height: 81px;
             border-radius: 3px;
             box-shadow: 1px 2px 9px 1px;
-            margin-top: 25px;
+            margin-top: 15px;
     }
 
     #logo img:hover{
@@ -150,6 +148,8 @@
         font-family: 'robotolight', Arial, sans-serif;
         font-size: 35px;
         text-align: center;
+        font-weight: bold;
+}
     }
 
     #ligneproduits {
@@ -308,7 +308,7 @@
         align-items: flex-start;
         position: relative;
         width: 300px;
-        margin: -28px;
+        margin: 20px; /* espace entre les images */
         margin-top: 5%;
         box-shadow: 1px 1px 3px 1px;
         border-radius: 3px;
@@ -325,15 +325,16 @@
 
     figcaption {
         position: absolute;
-        bottom: -28px;
-        width: 123%;
-        height: 45%;
-        margin-left: -11.5%;
+        bottom: 20px;
+        width: 88.9%;
+        height: 25%;
+        margin-left: 5.5%;
         font-family: "RobotoBold", sans-serif;
         color: #fff;
         text-align: left;
         background-color: rgba(0, 0, 0, 0.7);
         opacity: 0;
+        border-radius: 3px;
     }
 
     figcaption:hover {
@@ -375,7 +376,7 @@
         margin-top: 100px;
         padding-bottom: 63px;
         padding-top: 52px;
-        padding-left: 34%;
+        padding-left: 2%;
     }
 
     .menufooter a:hover{
@@ -395,11 +396,14 @@
 
         h7 {
             height: 40px;
-            width: 350px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
             font-size: 20px;
-            background-color:#E91E63;
-            color:white;
-            padding: 15px 0 0 0;
+            background-color: #E91E63;
+            color: white;
+            padding: 15px;
             border-radius: 10px 10px 0 0;
           }
           
