@@ -3,6 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Laura\P5\Controllers\FrontendController;
+use Laura\P5\Controllers\BackendController;
 
 $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/src/Views');
 $twig = new \Twig\Environment($loader, [
@@ -10,13 +11,14 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 $frontendController = new FrontendController($twig);
+$backendController = new BackendController($twig);
 
 
 
 $klein = new \Klein\Klein();
 
 
-$klein->with('/P5', function()  use ($klein, $twig, $frontendController){
+$klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backendController){
 
     $klein->respond('GET', '/', function () use($twig, $frontendController) {
         $frontendController->home();
@@ -36,6 +38,30 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController){
 
     $klein->respond('GET', '/contact', function ($request) {
         return 'Page contact';
+    });
+
+    $klein->with('/admin', function()  use ($klein, $twig, $backendController) {
+        $klein->respond('GET', '/', function () use($twig, $backendController) {
+            $backendController->home();
+        });
+
+        $klein->respond('GET', '/products', function () use($twig, $backendController) {
+            $backendController->addProduct();
+        });
+
+        $klein->respond('GET', '/products/[:id]', function ($req) use($twig, $backendController) {
+            $backendController->updateProduct($req->id);
+        });
+    });
+
+    $klein->with('/api', function()  use ($klein, $twig, $backendController) {
+        $klein->respond('DELETE', '/products/[:id]', function ($req) use($twig, $backendController) {
+            $backendController->deleteProduct($req->id);
+        });
+    });
+
+    $klein->respond('/public/[*]', function($request, $response, $service, $app) {
+        return $response->file(__DIR__ . $request->pathname());
     });
 
 });

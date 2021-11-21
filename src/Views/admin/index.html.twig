@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    
+        <h1>Liste des articles</h1>
+        <a href="products">Ajouter un produit</a>
+        <table class="list-products">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+    	            <tr data-id={{product.id}}>
+                        <td>{{product.id}}</td>
+                        <td>{{product.title}}</td>
+                        <td>
+                            <button class="delete-product" data-id="{{product.id}}">Supprimer</button>
+                            <a href="products/{{product.id}}">Modifier</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <script src="/P5/assets/js/admin.js"></script>
+    
+{% endblock %}

@@ -12,6 +12,9 @@ class ProductDAO extends Db {
 
     public function getOne($id){
         // Récupérer un seul produit avec son id
+        $req = $this->db->query('SELECT * FROM product WHERE id = ' . $id);
+        $req->setFetchMode(\PDO::FETCH_CLASS, 'Laura\P5\Models\Product');
+        return $req->fetch();
 
     }
 
@@ -24,7 +27,7 @@ class ProductDAO extends Db {
     }
 
     public function delete($id){
-
+        return $this->db->query('DELETE FROM product WHERE id = ' . $id);
     }
 
 }

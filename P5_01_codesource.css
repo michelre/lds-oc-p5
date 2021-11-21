@@ -104,6 +104,10 @@
         padding-bottom: 15px;
     }
 
+    #content {
+        padding-top: 100px;
+    }
+
     nav.menu {
         font-family: 'robotolight', Arial, sans-serif;
         border: 1px;
@@ -434,3 +438,16 @@
             color: black;
         
           }
+
+        /*
+        * ADMIN 
+        */
+
+        .list-products{
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .list-products td, .list-products th {
+            border: 1px solid black;
+        }
