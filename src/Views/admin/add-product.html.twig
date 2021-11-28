@@ -5,6 +5,32 @@
 {% block content %}
     
         <h1>Ajouter un nouveau produit</h1>
+
+        <form method="POST" action="/P5/admin/products" enctype="multipart/form-data">
+          <div>
+                <label>Titre</label>
+                <input type="text" name="title" />
+          </div>
+
+          <div>
+                <label>Prix</label>
+                <input type="text" name="price" />
+          </div>
+
+          <div>
+                <label>Description</label>
+                <textarea name="description" rows="10"></textarea
+          </div>
+
+          <div>
+                <label>Image</label>
+                <input name="image"  type="file" />
+          </div>
+
+
+          <button type="submit">Ajouter le produit</button>
+        
+        </form>
        
     
 {% endblock %}

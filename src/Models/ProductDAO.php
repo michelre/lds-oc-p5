@@ -18,8 +18,11 @@ class ProductDAO extends Db {
 
     }
 
-    public function create($product){
-
+    public function create($title, $description, $image, $price){
+        $req = $this->db->prepare('INSERT INTO product(title, description, image, price) VALUES(?, ?, ?, ?)');
+        $req->execute([
+            $title, $description, $image, $price
+        ]);
     }
 
     public function update($product){
