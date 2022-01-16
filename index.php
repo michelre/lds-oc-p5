@@ -84,8 +84,6 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
  - Possibilité de modifier des articles
  - Page products (avec pagnination)
  - Page panier avec requête ajax pour envoi de la commande
- - Formulaire de contact avec envoi de mail (mailjet = service d'envoi de mail)
- - Créer un fichier de configuration pour la connexion DB
  - Mettre en place une authentification pour accéder à l'admin
 */
 
