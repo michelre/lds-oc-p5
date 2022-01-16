@@ -36,16 +36,16 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
         $frontendController->contact();
     });
 
+    $klein->respond('POST', '/contact', function ($request) use($frontendController) {
+        $frontendController->contactSubmit();
+    });
+
     $klein->respond('GET', '/cart', function ($request) use($frontendController) {
         $frontendController->cart();
     });
 
     $klein->respond('GET', '/confirmation', function ($request) {
         return '<h1>Confirmation</h1>';
-    });
-
-    $klein->respond('GET', '/contact', function ($request) {
-        return 'Page contact';
     });
 
     $klein->with('/admin', function()  use ($klein, $backendController) {

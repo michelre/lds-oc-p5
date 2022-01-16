@@ -3,6 +3,7 @@
 namespace Laura\P5\Controllers;
 
 use Laura\P5\Models\ProductDAO;
+use Laura\P5\Services\MailService;
 
 class FrontendController {
 
@@ -32,6 +33,7 @@ class FrontendController {
     }
 
     public function contact(){
+        new MailService();
         echo $this->twig->render('contact.html.twig', []);
         die();
     }
@@ -39,6 +41,20 @@ class FrontendController {
     public function cart(){
         echo $this->twig->render('cart.html.twig', []);
         die();
+    }
+
+    public function contactSubmit() {
+        $mailService = new MailService();
+        $body = "<h1>Nouveau contact</h1>
+        <ul>
+            <li>Nom: " . $_POST['name'] . "</li>
+            <li>Email: " . $_POST['email'] . "</li>
+            <li>Demande: " . $_POST['description'] . "</li>
+        </ul>";
+        $mailService->sendMail('Nouveau contact', $body);
+        header('Location: /P5/contact');
+        die();
+
     }
 
 

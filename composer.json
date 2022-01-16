@@ -13,6 +13,7 @@
     ],
     "require": {
         "twig/twig": "^2.0",
-        "klein/klein": "^2.1"
+        "klein/klein": "^2.1",
+        "mailjet/mailjet-apiv3-php": "^1.5"
     }
 }

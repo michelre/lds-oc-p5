@@ -13,9 +13,24 @@
     </div>
 
 <!--IMAGES-->
-
-    <div class="contener">
-
+    <div class="container">
+   
+        <form method="post" action="/P5/contact">
+            <div>
+                <label>Votre nom *:</label>
+                <input name="name" required/>
+            </div>
+            <div>
+                <label>Votre email *:</label>
+                <input name="email" type="email" required/>
+            </div>
+            <div>
+                <label>Votre demande *:</label>
+                <textarea name="description" rows="10" style="width: 100%;" required></textarea>
+            </div>
+            <button type="submit">Contacter</button>
+        </form>
 
     </div>
+
 {% endblock %}
