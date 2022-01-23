@@ -22,8 +22,13 @@ class FrontendController {
     }
 
     public function products() {
-        $products = $this->productDAO->getAll();
-        echo $this->twig->render('produits.html.twig', ['products' => $products]);
+        $limit = 10;
+        $page = $_GET['page'] ?? 1;
+        $offset = ($page - 1) * $limit;
+        $products = $this->productDAO->getAll($offset, $limit);
+        $totalProducts = $this->productDAO->getTotal();
+        $nbPages = ceil($totalProducts / $limit);
+        echo $this->twig->render('produits.html.twig', ['products' => $products, 'page' => $page, 'nbPages' => $nbPages]);
         die();
     }
 

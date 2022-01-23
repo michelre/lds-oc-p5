@@ -4,10 +4,16 @@ namespace Laura\P5\Models;
 
 class ProductDAO extends Db {
 
-    public function getAll(){
+    public function getAll($offset, $limit){
         // Récupérer tous les produits
-        $req = $this->db->query('SELECT * FROM product');
+        $req = $this->db->query('SELECT * FROM product LIMIT ' . $limit . ' OFFSET ' . $offset);
         return $req->fetchAll(\PDO::FETCH_CLASS, 'Laura\P5\Models\Product');
+    }
+
+    public function getTotal(){
+        // Récupérer tous les produits
+        $req = $this->db->query('SELECT count(*) as total FROM product');
+        return intval($req->fetch()['total']);
     }
 
     public function getOne($id){

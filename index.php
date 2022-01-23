@@ -82,7 +82,6 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
 /*
  TODO
  - Possibilité de modifier des articles
- - Page products (avec pagnination)
  - Page panier avec requête ajax pour envoi de la commande
  - Mettre en place une authentification pour accéder à l'admin
 */
