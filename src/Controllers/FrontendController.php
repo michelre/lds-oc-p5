@@ -4,19 +4,22 @@ namespace Laura\P5\Controllers;
 
 use Laura\P5\Models\ProductDAO;
 use Laura\P5\Services\MailService;
+use Laura\P5\Models\UserDAO;
 
 class FrontendController {
 
     private $twig;
     private $productDAO;
+    private $userDAO;
 
     public function __construct($twig){
         $this->twig = $twig;
         $this->productDAO = new ProductDAO();
+        $this->userDAO = new UserDAO();
     }
 
     public function home(){
-        $products = $this->productDAO->getAll();
+        $products = $this->productDAO->getAll(0, 3);
         echo $this->twig->render('index.html.twig', ['products' => $products]);
         die();
     }
@@ -60,6 +63,22 @@ class FrontendController {
         header('Location: /P5/contact');
         die();
 
+    }
+
+    public function login() {
+        echo $this->twig->render('login.html.twig', []);
+        die();
+    }
+
+    public function loginSubmit(){
+        $user = $this->userDAO->getByLogin($_POST['login']);
+        if(password_verify($_POST['password'], $user->password)){
+            $_SESSION['user_id'] = $user->id;
+            header('Location: /P5/admin');
+            die();
+        }
+        header('Location: /P5/login');
+        die();
     }
 
 

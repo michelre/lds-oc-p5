@@ -15,13 +15,13 @@ class BackendController {
     }
 
     public function home(){
-        $products = $this->productDAO->getAll();
+        
+        $products = $this->productDAO->getAll(0, 1000);
         echo $this->twig->render('admin/index.html.twig', ['products' => $products]);
         die();
     }
 
     public function addProduct(){
-        $products = $this->productDAO->getAll();
         echo $this->twig->render('admin/add-product.html.twig', []);
         die();
     }
