@@ -36,7 +36,8 @@ class FrontendController {
     }
 
     public function product($id){
-        echo $this->twig->render('produit.html.twig', ['id' => $id]);
+        $product = $this->productDAO->getOne($id);
+        echo $this->twig->render('produit.html.twig', ['product' => $product]);
         die();
     }
 

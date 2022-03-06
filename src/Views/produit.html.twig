@@ -16,6 +16,15 @@
 
     <div class="contener">
 
+        <form id="addToCart">
+            <input type="hidden" name="id" value="{{product.id}}">
+            <input type="hidden" name="name" value="{{product.title}}">
+            <input type="hidden" name="price" value="{{product.price}}">
+            <input type="number" name="quantity"/>
+            <button>Ajouter au panier</button>
+        </form>
+        
+
         <img src="assets\images\camera1.jpg" alt="camera1" />
             <h1>Visio</h1></br>
                 <p>
@@ -27,4 +36,6 @@
                 </p>
 
     </div>
+
+    <script src="/P5/assets/js/cart.js"></script>
 {% endblock %}
