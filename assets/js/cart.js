@@ -55,3 +55,29 @@ if(cartDOM){
 
 
 }
+
+
+const cartFormDOM = document.querySelector('#cart-form');
+
+if(cartFormDOM){
+
+    cartFormDOM.addEventListener('submit', (e) => {
+        e.preventDefault()
+        fetch('/P5/api/order', {
+            method: 'POST',
+            body: JSON.stringify({
+                firstname: e.target.firstname.value,
+                lastname: e.target.lastname.value
+            })
+        }).then(res => {
+            if(res.status === 200){
+                return res.json()
+            }
+            alert('Formulaire invalide')
+        }).then(res => {
+            window.location.href = '/P5/confirmation?orderId=' + res.order
+            localStorage.setItem('cart', {});
+        })
+    })
+
+}

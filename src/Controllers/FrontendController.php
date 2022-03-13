@@ -52,6 +52,11 @@ class FrontendController {
         die();
     }
 
+    public function orderConfirmation($request){
+        echo $this->twig->render('confirmation.html.twig', ['orderId' => $_GET['orderId']]);
+        die();
+    }
+
     public function contactSubmit() {
         $mailService = new MailService();
         $body = "<h1>Nouveau contact</h1>
@@ -81,6 +86,20 @@ class FrontendController {
         header('Location: /P5/login');
         die();
     }
+
+    public function createOrder($req, $res){
+        $body = json_decode($req->body(), true);
+        if(empty($body['firstname'])){
+            $res->code(422)->json(['error' => 'INVALID_FIRSTNAME']);
+            die();
+        }
+        if(empty($body['lastname'])){
+            $res->code(422)->json(['error' => 'INVALID_LASTNAME']);
+            die();
+        }
+        echo json_encode(['order' => uniqid()]);
+        die();
+    } 
 
 
 }

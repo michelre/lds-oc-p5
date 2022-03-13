@@ -46,6 +46,10 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
         $frontendController->cart();
     });
 
+    $klein->respond('GET', '/confirmation', function ($request) use($frontendController) {
+        $frontendController->orderConfirmation($request);
+    });
+
     $klein->respond('GET', '/login', function ($request) use($frontendController) {
         $frontendController->login();
     });
@@ -83,9 +87,13 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
         });
     });
 
-    $klein->with('/api', function()  use ($klein, $twig, $backendController) {
+    $klein->with('/api', function()  use ($klein, $twig, $backendController, $frontendController) {
         $klein->respond('DELETE', '/products/[:id]', function ($req) use($twig, $backendController) {
             $backendController->deleteProduct($req->id);
+        });
+
+        $klein->respond('POST', '/order', function ($req, $res) use($twig, $frontendController) {
+            $frontendController->createOrder($req, $res);
         });
     });
 
