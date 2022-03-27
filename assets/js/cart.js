@@ -1,5 +1,15 @@
-const formAddToCart = document.querySelector('#addToCart');
 let cart = JSON.parse(localStorage.getItem('cart') || '{}')
+
+function cartTotalCalculate(){
+    let total = 0;
+    Object.values(cart).forEach(p => {
+        total += p.price * p.quantity
+    })
+    return total;
+}
+
+const formAddToCart = document.querySelector('#addToCart');
+
 
 if(formAddToCart){
     formAddToCart.addEventListener('submit', (e) =>{
@@ -47,11 +57,17 @@ if(cartDOM){
     
             cartDOM.querySelector('tbody').appendChild(tr)
         })
-    }
-
-    // TODO : Afficher le prix total + suppression d'un produit + formulaire d'envoi de commande
-
-   
+        const trTotal = document.createElement('tr');
+        const tdTotalLabel = document.createElement('td');
+        const tdTotal = document.createElement('td');
+        tdTotalLabel.textContent = 'Total';
+        tdTotalLabel.colSpan = '2'
+        tdTotalLabel.style.textAlign = 'left';
+        tdTotal.textContent = cartTotalCalculate() + '€'
+        trTotal.appendChild(tdTotalLabel)
+        trTotal.appendChild(tdTotal)
+        cartDOM.querySelector('tbody').appendChild(trTotal)
+    }   
 
 
 }
@@ -67,7 +83,8 @@ if(cartFormDOM){
             method: 'POST',
             body: JSON.stringify({
                 firstname: e.target.firstname.value,
-                lastname: e.target.lastname.value
+                lastname: e.target.lastname.value,
+                products: Object.values(cart).map(p => ({id: p.id, quantity: p.quantity}))
             })
         }).then(res => {
             if(res.status === 200){
@@ -76,7 +93,7 @@ if(cartFormDOM){
             alert('Formulaire invalide')
         }).then(res => {
             window.location.href = '/P5/confirmation?orderId=' + res.order
-            localStorage.setItem('cart', {});
+            localStorage.setItem('cart', '{}');
         })
     })
 

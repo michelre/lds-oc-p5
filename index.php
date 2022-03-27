@@ -105,8 +105,9 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
 
 /*
  TODO
+ - Vider les panier
  - Possibilité de modifier des articles
- - Page panier avec requête ajax pour envoi de la commande
+ - Page de listing des commandes
 */
 
 

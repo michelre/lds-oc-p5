@@ -5,17 +5,20 @@ namespace Laura\P5\Controllers;
 use Laura\P5\Models\ProductDAO;
 use Laura\P5\Services\MailService;
 use Laura\P5\Models\UserDAO;
+use Laura\P5\Models\OrderDAO;
 
 class FrontendController {
 
     private $twig;
     private $productDAO;
     private $userDAO;
+    private $orderDAO;
 
     public function __construct($twig){
         $this->twig = $twig;
         $this->productDAO = new ProductDAO();
         $this->userDAO = new UserDAO();
+        $this->orderDAO = new OrderDAO();
     }
 
     public function home(){
@@ -97,7 +100,14 @@ class FrontendController {
             $res->code(422)->json(['error' => 'INVALID_LASTNAME']);
             die();
         }
-        echo json_encode(['order' => uniqid()]);
+        $uid =  uniqid();
+        $total = 0;
+        foreach($body['products'] as $p){
+            $product = $this->productDAO->getOne($p['id']);
+            $total += $product->price * $p['quantity'];
+        }
+        $this->orderDAO->create($body['firstname'], $body['lastname'], $total, $uid);
+        echo json_encode(['order' => $uid]);
         die();
     } 
 

@@ -19,12 +19,10 @@
         border-top: 6px solid white;
         opacity: 1;
         transition: 0.5s ease-in-out;
-        /* bordure haut et Couleur petite barre noire liens du menu */
+        /* barre blanche hover menu */
         font-size: 14px;
-        /* hauteur menu sans clic */
-        padding-top: 5%;
-        /* barre noir en haut du menu */
-        margin-top: 1%;
+        padding-top: 1.8%;
+        margin-top: 4.2%;
     }
 
     .link {
@@ -92,18 +90,15 @@
         justify-content: space-around;
         /* alignement texte du menu en face du logo */
         align-items: center;
-        top: 0px;
         /*marge gauche logo */
         width: 80%;
         /*marge blanche haut */
-        height: 100px;
+        height: 50px;
         z-index: 100;
         /* fond blanc menu */
         position: fixed;
         width: 100%;
-        margin-right: 0%;
         box-shadow: 1px 3px 9px 3px;
-        padding-bottom: 15px;
     }
 
     #content {
@@ -131,11 +126,10 @@
 
     #logo img {
         /* Taille logo */
-            width: 130px;
-            height: 81px;
-            border-radius: 3px;
-            box-shadow: 1px 2px 9px 1px;
-            margin-top: 15px;
+        width: 60px;
+        height: 32px;
+        border-radius: 3px;
+        box-shadow: 1px 2px 9px 1px;
     }
 
     #logo img:hover{
@@ -145,7 +139,7 @@
     }
  
     .fa-circle {
-        color: #cdafaf;
+        color: #f2c7c1;
     }
 
     /************************************************** CORPS **************************************************/
@@ -384,10 +378,10 @@
 
     /**************************************** FOOTER ****************************************/
     .menufooter{
-        background-color: #f2c7c1;
+        background-color: #41484a;
         margin-top: 100px;
-        padding-bottom: 63px;
-        padding-top: 52px;
+        padding-bottom: 35px;
+        padding-top: 10px;
         padding-left: 2%;
         box-shadow: 1px 3px 9px 3px;
     }
@@ -397,6 +391,14 @@
     }
 
     /**************************************** FORMULAIRE ****************************************/
+    textarea {
+         resize: none;
+         width: 84% !important;
+         box-shadow: 4px 4px 5px #999999;
+         margin-top: 10px;
+    }
+
+
         form {
             background: #FFFFFF;
             width: 350px;
@@ -405,6 +407,8 @@
             box-shadow: 4px 4px 5px #999999;
             padding-bottom: 40px;
             border-radius: 10px;
+            margin-top: 60px;
+            padding-top: 20px;
           }
 
         h7 {
@@ -439,18 +443,15 @@
             box-shadow: 4px 4px 5px #999999;
             border-radius: 10px;
             cursor: pointer;
-            
+            margin-top: 15px;
           }
 
-          button :hover {
-            
-            color: black;
-        
+          button:hover {
+            background-color: black;
+            transition: 0.2s ease-in-out;
           }
 
-        /*
-        * ADMIN 
-        */
+        /* ADMIN */
 
         .list-products{
             width: 100%;
