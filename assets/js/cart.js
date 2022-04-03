@@ -36,12 +36,14 @@ if(formAddToCart){
 }
 
 const cartDOM = document.querySelector('#cart');
+const buttonEmptyCartDOM = document.querySelector('#empty-cart');
 
 if(cartDOM){
     const products = Object.values(cart)
 
     if(products.length === 0){
         cartDOM.innerHTML = 'Panier vide'
+        buttonEmptyCartDOM.style.display = 'none';
     } else {
         products.forEach((product) => {
             const tr = document.createElement('tr');
@@ -67,6 +69,11 @@ if(cartDOM){
         trTotal.appendChild(tdTotalLabel)
         trTotal.appendChild(tdTotal)
         cartDOM.querySelector('tbody').appendChild(trTotal)
+
+        buttonEmptyCartDOM.addEventListener('click', () => {
+            localStorage.removeItem('cart');
+            window.location.reload();
+        })
     }   
 
 

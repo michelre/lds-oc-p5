@@ -73,6 +73,11 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
 
         $klein->respond('GET', '/products', function () use ($backendController) {
             AuthService::checkAuthentication();
+            $backendController->listProducts();
+        });
+
+        $klein->respond('GET', '/products/add', function () use ($backendController) {
+            AuthService::checkAuthentication();
             $backendController->addProduct();
         });
 
@@ -81,10 +86,21 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
             $backendController->addProductForm($request->paramsPost(), $request->files());
         });
 
+        $klein->respond('POST', '/products/[:id]', function ($request) use ($backendController) {
+            AuthService::checkAuthentication();
+            $backendController->updateProductForm($request->paramsPost(), $request->files(), $request->id);
+        });
+
         $klein->respond('GET', '/products/[:id]', function ($req) use($backendController) {
             AuthService::checkAuthentication();
             $backendController->updateProduct($req->id);
         });
+
+        $klein->respond('GET', '/orders', function () use ($backendController) {
+            AuthService::checkAuthentication();
+            $backendController->listOrders();
+        });
+
     });
 
     $klein->with('/api', function()  use ($klein, $twig, $backendController, $frontendController) {
@@ -101,13 +117,19 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
         return $response->file(__DIR__ . $request->pathname());
     });
 
+    $klein->respond('/images/[*]', function($request, $response, $service, $app) {
+        $image = explode('/', $request->pathname());
+        $image = $image[count($image) - 1];
+        return $response->file(__DIR__ . '/assets/images/' . $image);
+    });
+
 });
 
 /*
  TODO
- - Vider les panier
- - Possibilité de modifier des articles
- - Page de listing des commandes
+ - Possibilité de modifier des articles (a vérifier)
+ - Déploiement (à vérifier si compte gratuit IONOS sinon autre solution gratuite)
+ - Dernier nettoyage du code
 */
 
 

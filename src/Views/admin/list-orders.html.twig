@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+    
+    <div class="contener">
+        <h1>Liste des commandes</h1>
+        <table class="list-products">
+            <thead>
+                <tr>
+                    <th>N°Commande</th>
+                    <th>Nom</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+    	            <tr>
+                        <td>{{order.uid}}</td>
+                        <td>{{order.first_name}} {{order.last_name}}</td>
+                        <td>{{order.total}}€</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+        <script src="/P5/assets/js/admin.js"></script>
+    
+{% endblock %}

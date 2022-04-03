@@ -31,8 +31,11 @@ class ProductDAO extends Db {
         ]);
     }
 
-    public function update($product){
-
+    public function update($id, $title, $description, $image, $price){
+        $req = $this->db->prepare('UPDATE product SET title=?, description=?, image=?, price=? WHERE id=?) VALUES(?, ?, ?, ?, ?)');
+        $req->execute([
+            $title, $description, $image, $price, $id
+        ]);
     }
 
     public function delete($id){

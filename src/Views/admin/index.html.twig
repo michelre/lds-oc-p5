@@ -5,29 +5,15 @@
 {% block content %}
     
     <div class="contener">
-        <h1>Liste des articles</h1>
-        <a href="/P5/admin/products">Ajouter un produit</a>
-        <table class="list-products">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Titre</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product in products %}
-    	            <tr data-id={{product.id}}>
-                        <td>{{product.id}}</td>
-                        <td>{{product.title}}</td>
-                        <td>
-                            <button class="delete-product" data-id="{{product.id}}">Supprimer</button>
-                            <a href="products/{{product.id}}">Modifier</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+       <ul>
+        <li>
+            <a href='/P5/admin/products'>Gérer mes articles</a>
+        </li>
+         <li>
+            <a href='/P5/admin/orders'>Gérer mes commandes</a>
+        </li>
+
+       </ul>
     </div>
 
         <script src="/P5/assets/js/admin.js"></script>

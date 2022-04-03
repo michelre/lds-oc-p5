@@ -5,6 +5,36 @@
 {% block content %}
     
         <h1>Modifier {{product.title}}</h1>
+
+        <form method="POST" action="/P5/admin/products/{{product.id}}" enctype="multipart/form-data">
+          <div>
+                <label>Titre</label>
+                <input type="text" name="title" value={{product.title}} />
+          </div>
+
+          <div>
+                <label>Prix</label>
+                <input type="text" name="price" value={{product.price}} />
+          </div>
+
+          <div>
+                <label>Description</label>
+                <textarea name="description" rows="10">
+                        {{product.description}}
+                </textarea>
+          </div>
+
+          <div>
+                <label>Image</label>
+                <input name="image"  type="file" />
+
+                <img src="/P5/images/{{product.image}}" />
+          </div>
+
+
+          <button type="submit">Modifier le produit</button>
+        
+        </form>
        
     
 {% endblock %}
