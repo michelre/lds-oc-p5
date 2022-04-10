@@ -16,13 +16,12 @@
         color:white;
         font-family: 'robotobold', Arial, sans-serif;
         /* Couleur ligne du menu */
-        border-top: 6px solid white;
+        border-top: 11px solid white;
         opacity: 1;
         transition: 0.5s ease-in-out;
         /* barre blanche hover menu */
         font-size: 14px;
         padding-top: 1.8%;
-        margin-top: 4.2%;
     }
 
     .link {
@@ -33,10 +32,10 @@
         color: rgb(223 58 149);
         /* Couleur texte menu sans clic */
         font-family: 'robotobold', Arial, sans-serif;
-        padding: 38px 33px;
+        padding: 20px 35px;
         font-size: 14px;
-        /* hauteur menu avec clic */
-        padding-top: 7.1%;
+        display: flex;
+        align-items: center;
     }
 
     .h1{
@@ -80,6 +79,28 @@
         text-transform: capitalize;
     }
 
+    .content {
+        min-height: calc(100vh - 50px);
+    }
+
+    .vignettes {
+        display: flex;
+        
+    }
+
+    .vignettes a, .vignettes figure{
+        width: 150px;
+        height: 150px;
+        margin: 8px;
+        overflow: hidden;
+    }
+
+    .vignettes img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     /************************************************** HEADER *************************************************/
     header {
         font-family: 'robotolight', Arial, sans-serif;
@@ -103,6 +124,8 @@
     #content {
         padding-top: 100px;
     }
+
+    
 
     nav.menu {
         font-family: 'robotolight', Arial, sans-serif;
@@ -387,15 +410,20 @@
     /**************************************** FOOTER ****************************************/
     .menufooter{
         background-color: #41484a;
-        margin-top: 100px;
-        padding-bottom: 35px;
-        padding-top: 10px;
         padding-left: 2%;
         box-shadow: 1px 3px 9px 3px;
+        display: flex;
+        align-items: center;
+        height: 75px;
+        justify-content: center;
     }
 
     .menufooter a:hover{
         color: black;
+    }
+
+    .fa-shopping-basket {
+        margin-left: 5px;
     }
 
     /**************************************** FORMULAIRE ****************************************/
@@ -416,7 +444,7 @@
             padding-bottom: 40px;
             border-radius: 10px;
             margin-top: 60px;
-            padding-top: 20px;
+            padding: 20px;
           }
 
         h7 {
@@ -433,8 +461,8 @@
           }
           
           input {
-            margin: 20px 0px;
-            width: 300px;
+            margin: 0 0 20px 0px;
+            width: 100%;
             border: none;
             padding: 5px 0;
             border-bottom: solid 1px #E91E63;
@@ -462,10 +490,7 @@
           }
 
     label{
-          display: inline-block;
-          margin-left: 25px;
-          padding-right: -23px;
-          width: 0px;     
+          display: flex;     
         }
 
 
@@ -479,3 +504,21 @@
         .list-products td, .list-products th {
             border: 1px solid black;
         }
+
+        .cart-empty {
+            text-align: center;
+        }
+
+        #cart {
+            margin: 12px auto;
+            width: 100%;
+            box-shadow: 4px 4px 5px #999999;
+        }
+
+        #cart td, #cart th {
+            width: 33%;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+

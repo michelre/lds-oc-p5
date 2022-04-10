@@ -32,6 +32,7 @@ if(formAddToCart){
 
 
         localStorage.setItem('cart', JSON.stringify(cart))
+        alert('Votre produit a bien été ajouté au panier');
     })
 }
 
@@ -42,7 +43,7 @@ if(cartDOM){
     const products = Object.values(cart)
 
     if(products.length === 0){
-        cartDOM.innerHTML = 'Panier vide'
+        cartDOM.outerHTML = '<p class="cart-empty">Panier vide</p>'
         buttonEmptyCartDOM.style.display = 'none';
     } else {
         products.forEach((product) => {
@@ -64,7 +65,6 @@ if(cartDOM){
         const tdTotal = document.createElement('td');
         tdTotalLabel.textContent = 'Total';
         tdTotalLabel.colSpan = '2'
-        tdTotalLabel.style.textAlign = 'left';
         tdTotal.textContent = cartTotalCalculate() + '€'
         trTotal.appendChild(tdTotalLabel)
         trTotal.appendChild(tdTotal)

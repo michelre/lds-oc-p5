@@ -5,37 +5,24 @@
 {% block content %}
     <!--DETAIL PRODUIT-->
 
-    <h2>PRODUIT</h2>
+    <h2>PRODUIT {{product.title}}</h2>
     <div class="ligneproduits">
         <div class="ligneleft2"></div>
         <i class="fas fa-circle"></i>
         <div class="ligneright2"></div>
     </div>
 
-<!--IMAGES-->
+    <img src="/P5/images/{{product.image}}" width="100%"/>
 
-    <div class="contener">
+    <p>{{product.description}}</p>
 
-        <form id="addToCart">
+     <form id="addToCart">
             <input type="hidden" name="id" value="{{product.id}}">
             <input type="hidden" name="name" value="{{product.title}}">
             <input type="hidden" name="price" value="{{product.price}}">
-            <input type="number" name="quantity"/>
+            <input type="number" name="quantity" min="1" value="1"/>
             <button>Ajouter au panier</button>
         </form>
-        
-
-        <img src="assets\images\camera1.jpg" alt="camera1" />
-            <h1>Visio</h1></br>
-                <p>
-                    </br>❤ 【HD 1080P & 36MP】 Cet appareil photo numérique a une résolution d'image HD 1080P et une résolution vidéo de 36MP, et un microphone intégré peut vous aider à prendre des images ou des vidéos claires et à capturer des moments passionnants et inoubliables. Répondez pleinement à vos besoins, vous pouvez profiter d'un bon moment entre amis, famille et camarades de classe.</br>
-                    </br>❤【Enregistrement de webcam & vlogging】Cet appareil photo numérique peut être utilisé comme webcam. Éteignez d'abord l'appareil photo, connectez l'appareil photo à l'ordinateur avec un câble USB, appuyez simultanément sur le bouton d'alimentation et le bouton MODE pour passer en mode webcam, puis vous pouvez passer un appel vidéo. Vous pouvez également transférer les fichiers de l'appareil photo sur l'ordinateur, puis partager vos photos et vidéos sur Facebook, YouTube et d'autres médias sociaux</br>
-                    </br>❤ 【Zoom Numérique 16X & Fonction de Pause】 Cet appareil photo numérique prend en charge le zoom numérique 16x, qui peut agrandir les images et les vidéos. Il dispose également d'une fonction de pause, qui peut être mise en pause lors de l'enregistrement ou de la lecture de la vidéo. La lumière d'appoint intégrée vous aide à prendre des photos de haute qualité dans l'obscurité. Interface de trépied externe, vous pouvez installer un trépied pour vous aider à stabiliser la prise de vue.</br>
-                    </br>❤ 【Portable & Facile à Utiliser】 Ce mini appareil photo numérique portable est très léger et petit, plus petit qu'un smartphone, vous pouvez facilement le mettre dans votre poche et le transporter à tout moment, n'importe où. Cet appareil photo numérique à viser et à photographier est très facile à utiliser et simple à contrôler, très adapté aux personnes âgées, aux adolescents, aux enfants et aux étudiants.</br>
-                    </br>❤ 【Multifonctionnel & Meilleur Cadeau】 Cette mini caméra prend en charge les fonctions Beauté visage, anti-tremblement, détection de visage, capture de sourire et minuterie Selfie. Cet appareil photo est le meilleur cadeau pour les grands-parents, les pères, les mères, les adolescents, les enfants et les étudiants, que ce soit la fête des mères, la fête des pères, le jour de Thanksgiving, l'anniversaire et Noël.</br>
-                </p>
-
-    </div>
 
     <script src="/P5/assets/js/cart.js"></script>
 {% endblock %}
