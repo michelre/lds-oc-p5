@@ -85,17 +85,26 @@
 
     .vignettes {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         
     }
 
-    .vignettes a, .vignettes figure{
-        width: 150px;
-        height: 150px;
+    .vignette {
+        width: 100%;
+        height: 250px;
         margin: 8px;
-        overflow: hidden;
     }
 
-    .vignettes img {
+    .vignettes figure{
+        width: 100%;
+        height: 100%;
+        margin: 8px;
+        overflow: hidden;
+        display: block;
+    }
+
+    figure img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -360,10 +369,9 @@
 
     figcaption {
         position: absolute;
-        bottom: 20px;
-        width: 84.9%;
+        bottom: 0;
+        width: 100%;
         height: 25%;
-        margin-left: 7.5%;
         font-family: "RobotoBold", sans-serif;
         color: #fff;
         text-align: left;
@@ -405,6 +413,12 @@
 
     figure .activeportfoliomenu {
         opacity: 1;
+    }
+
+    @media screen and (min-width: 768px){
+        .vignette {
+            width: 250px;
+        }
     }
 
     /**************************************** FOOTER ****************************************/

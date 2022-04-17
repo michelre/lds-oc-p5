@@ -14,20 +14,22 @@
 
 <!--IMAGES-->
 
-    <div class="contener">
+    <div class="container">
 
-        {% for product in products %}
-        <a href="/P5/products/{{product.id}}">
-           <figure><img src="/P5/images/{{product.image}}" alt="camera1" />
-            <figcaption>
-                <h4>{{product.title}}</h4></br>
-                <p>{{product.description}}</p>
-                <div class="camera"><i class="fas fa-camera-retro"></i>
-                </div>
-            </figcaption>
-        </figure>
-        </a>
-        {% endfor %}
+        <div class="vignettes">
+            {% for product in products %}
+            <a href="/P5/products/{{product.id}}" class="vignette">
+            <figure><img src="/P5/images/{{product.image}}" alt="camera1" />
+                <figcaption>
+                    <h4>{{product.title}}</h4></br>
+                    <p>{{product.description}}</p>
+                    <div class="camera"><i class="fas fa-camera-retro"></i>
+                    </div>
+                </figcaption>
+            </figure>
+            </a>
+            {% endfor %}
+        </div>
 
         
 
