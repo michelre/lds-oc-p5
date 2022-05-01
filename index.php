@@ -1,6 +1,8 @@
 <?php
 
+
 require_once __DIR__ . '/vendor/autoload.php';
+//define('APP_PATH', '/P5');
 
 use Laura\P5\Controllers\FrontendController;
 use Laura\P5\Controllers\BackendController;
@@ -19,7 +21,7 @@ $backendController = new BackendController($twig);
 $klein = new \Klein\Klein();
 
 
-$klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backendController){
+//$klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backendController){
     session_start();
 
     $klein->respond('GET', '/', function () use($twig, $frontendController) {
@@ -114,7 +116,8 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
     });
 
     $klein->respond('/public/[*]', function($request, $response, $service, $app) {
-        return $response->file(__DIR__ . $request->pathname());
+        //$response->header('Content-Type', 'text/css');
+        return $response->file(__DIR__ . '../' . $request->params()[1]);
     });
 
     $klein->respond('/images/[*]', function($request, $response, $service, $app) {
@@ -123,7 +126,7 @@ $klein->with('/P5', function()  use ($klein, $twig, $frontendController, $backen
         return $response->file(__DIR__ . '/assets/images/' . $image);
     });
 
-});
+//});
 
 /*
  TODO

@@ -86,7 +86,7 @@ if(cartFormDOM){
 
     cartFormDOM.addEventListener('submit', (e) => {
         e.preventDefault()
-        fetch('/P5/api/order', {
+        fetch('/api/order', {
             method: 'POST',
             body: JSON.stringify({
                 firstname: e.target.firstname.value,
@@ -99,7 +99,7 @@ if(cartFormDOM){
             }
             alert('Formulaire invalide')
         }).then(res => {
-            window.location.href = '/P5/confirmation?orderId=' + res.order
+            window.location.href = '/confirmation?orderId=' + res.order
             localStorage.setItem('cart', '{}');
         })
     })

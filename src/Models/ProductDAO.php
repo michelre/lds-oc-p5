@@ -24,17 +24,17 @@ class ProductDAO extends Db {
 
     }
 
-    public function create($title, $description, $image, $price){
-        $req = $this->db->prepare('INSERT INTO product(title, description, image, price) VALUES(?, ?, ?, ?)');
+    public function create($title, $description, $image, $price, $shortDescription){
+        $req = $this->db->prepare('INSERT INTO product(title, description, image, price, shortDescription) VALUES(?, ?, ?, ?, ?)');
         $req->execute([
-            $title, $description, $image, $price
+            $title, $description, $image, $price, $shortDescription
         ]);
     }
 
-    public function update($id, $title, $description, $image, $price){
-        $req = $this->db->prepare('UPDATE product SET title=?, description=?, image=?, price=? WHERE id=?) VALUES(?, ?, ?, ?, ?)');
+    public function update($id, $title, $description, $image, $price, $shortDescription){
+        $req = $this->db->prepare('UPDATE product SET title=?, description=?, image=?, price=?, short_description=? WHERE id=?');
         $req->execute([
-            $title, $description, $image, $price, $id
+            $title, $description, $image, $price, $shortDescription, $id
         ]);
     }
 

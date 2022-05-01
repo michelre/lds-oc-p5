@@ -8,7 +8,7 @@ class AuthService {
 
     public static function checkAuthentication(){
       if(!isset($_SESSION['user_id'])){
-        header('Location: /P5/login');
+        header('Location: /login');
         die();
       }
     }

@@ -69,7 +69,7 @@ class FrontendController {
             <li>Demande: " . $_POST['description'] . "</li>
         </ul>";
         $mailService->sendMail('Nouveau contact', $body);
-        header('Location: /P5/contact');
+        header('Location: /contact');
         die();
 
     }
@@ -83,10 +83,10 @@ class FrontendController {
         $user = $this->userDAO->getByLogin($_POST['login']);
         if(password_verify($_POST['password'], $user->password)){
             $_SESSION['user_id'] = $user->id;
-            header('Location: /P5/admin');
+            header('Location: /admin');
             die();
         }
-        header('Location: /P5/login');
+        header('Location: /login');
         die();
     }
 

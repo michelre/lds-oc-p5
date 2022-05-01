@@ -9,5 +9,6 @@ class Product {
     public $description;
     public $image;
     public $price;
+    public $short_description;
 
 }

@@ -73,14 +73,13 @@ class BackendController {
                 die("Erreur d'upload");
             }
         }
-        $this->productDAO->create($product->title, $product->description, $imageName, $product->price);
-        header('Location: /P5/admin');
+        $this->productDAO->create($product->title, $product->description, $imageName, $product->price, $product->short_description);
+        header('Location: /admin');
         die();
     }
 
     public function updateProductForm($product, $files, $id) {
         $image = $files['image'];
-        var_dump($product);
         $imageName = '';
 
         if(isset($image) && !empty($image['tmp_name'])){
@@ -91,8 +90,8 @@ class BackendController {
                 die("Erreur d'upload");
             }
         }
-        $this->productDAO->update($id, $product->title, $product->description, $imageName, $product->price);
-        header('Location: /P5/admin');
+        $this->productDAO->update($id, $product->title, $product->description, $imageName, $product->price, $product->short_description);
+        header('Location: /admin');
         die();
     }
 

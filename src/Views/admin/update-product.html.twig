@@ -6,7 +6,7 @@
     
         <h1>Modifier {{product.title}}</h1>
 
-        <form method="POST" action="/P5/admin/products/{{product.id}}" enctype="multipart/form-data">
+        <form method="POST" action="/admin/products/{{product.id}}" enctype="multipart/form-data">
           <div>
                 <label>Titre</label>
                 <input type="text" name="title" value={{product.title}} />
@@ -15,6 +15,11 @@
           <div>
                 <label>Prix</label>
                 <input type="text" name="price" value={{product.price}} />
+          </div>
+
+          <div>
+                <label>Description courte</label>
+                <input type="text" name="short_description" />
           </div>
 
           <div>
@@ -28,7 +33,7 @@
                 <label>Image</label>
                 <input name="image"  type="file" />
 
-                <img src="/P5/images/{{product.image}}" />
+                <img src="/images/{{product.image}}" />
           </div>
 
 
