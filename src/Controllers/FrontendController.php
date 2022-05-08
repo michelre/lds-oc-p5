@@ -109,7 +109,6 @@ class FrontendController {
         $this->orderDAO->create($body['firstname'], $body['lastname'], $total, $uid);
         echo json_encode(['order' => $uid]);
         die();
-    } 
-
+    }
 
 }

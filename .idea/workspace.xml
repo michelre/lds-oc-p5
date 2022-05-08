@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a9ff16c6-c82e-42ef-bd4d-bf9b22b3bb4b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/admin/list-articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/admin/list-articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/admin/list-orders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/admin/list-orders.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/cart.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/confirmation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/confirmation.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/produit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/produit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/produits.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/produits.html.twig" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/mailjet/mailjet-apiv3-php" />
+      <path value="$PROJECT_DIR$/vendor/klein/klein" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="28Z78aT6ycKsre1mHFVUgjcjCye" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a9ff16c6-c82e-42ef-bd4d-bf9b22b3bb4b" name="Default Changelist" comment="" />
+      <created>1651412096046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651412096046</updated>
+      <workItem from="1651412097988" duration="2823000" />
+      <workItem from="1651646022246" duration="4207000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="341" y="134" width="597" height="490" key="find.popup" timestamp="1652017030196">
+      <screen x="0" y="25" width="1280" height="715" />
+    </state>
+    <state x="341" y="134" width="597" height="490" key="find.popup/0.25.1280.715@0.25.1280.715" timestamp="1652017030196" />
+  </component>
+</project>

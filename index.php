@@ -31,13 +31,14 @@ $klein = new \Klein\Klein();
     $klein->respond('GET', '/products', function ($request) use($twig, $frontendController) {
         $frontendController->products();
     });
-    
+
     $klein->respond('GET', '/products/[:id]', function ($request) use($frontendController) {
         $frontendController->product($request->id);
     });
 
     $klein->respond('GET', '/contact', function ($request) use($frontendController) {
         $frontendController->contact();
+        die();
     });
 
     $klein->respond('POST', '/contact', function ($request) use($frontendController) {
@@ -60,13 +61,9 @@ $klein = new \Klein\Klein();
         $frontendController->loginSubmit();
     });
 
-    $klein->respond('GET', '/confirmation', function ($request) {
-        return '<h1>Confirmation</h1>';
-    });
-
     $klein->with('/admin', function()  use ($klein, $backendController) {
 
-    
+
         $klein->respond('GET', '', function () use ($backendController) {
             AuthService::checkAuthentication();
             $backendController->home();
@@ -115,12 +112,14 @@ $klein = new \Klein\Klein();
         });
     });
 
-    $klein->respond('/public/[*]', function($request, $response, $service, $app) {
-        //$response->header('Content-Type', 'text/css');
-        return $response->file(__DIR__ . '../' . $request->params()[1]);
+    $klein->respond('/public/[*]', function($request, $response) {
+        $file = readfile(__DIR__ . '/' . $request->params()[1]);
+        $response->header('content-type', mime_content_type($file));
+        $response->body($file);
+        $response->send();
     });
 
-    $klein->respond('/images/[*]', function($request, $response, $service, $app) {
+    $klein->respond('/images/[*]', function($request, $response) {
         $image = explode('/', $request->pathname());
         $image = $image[count($image) - 1];
         return $response->file(__DIR__ . '/assets/images/' . $image);
