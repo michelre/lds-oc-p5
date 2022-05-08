@@ -19,7 +19,7 @@
         <div class="vignettes">
             {% for product in products %}
             <a href="/products/{{product.id}}" class="vignette">
-            <figure><img src="/images/{{product.image}}" alt="camera1" />
+            <figure><img src="/public/{{product.image}}" alt="camera1" />
                 <figcaption>
                     <h4>{{product.title}}</h4></br>
                     <p>{{product.description}}</p>

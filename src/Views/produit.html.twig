@@ -12,9 +12,9 @@
         <div class="ligneright2"></div>
     </div>
 
-    <img src="/images/{{product.image}}" width="100%"/>
+    <img src="/public/{{product.image}}" width="100%"/>
 
-    <p>{{product.description}}</p>
+    <div>{{product.description|raw}}</div>
 
      <form id="addToCart">
             <input type="hidden" name="id" value="{{product.id}}">
@@ -24,5 +24,5 @@
             <button>Ajouter au panier</button>
         </form>
 
-    <script src="/assets/js/cart.js"></script>
+    <script src="/public/assets/js/cart.js"></script>
 {% endblock %}
