@@ -1,6 +1,6 @@
 # Start
 
-Cliquer sur Terminal > New Termine
+Cliquer sur Terminal > New Terminal
 
 ```
 php -S 127.0.0.1:9090 index.php
