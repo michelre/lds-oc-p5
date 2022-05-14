@@ -103,5 +103,4 @@ if(cartFormDOM){
             localStorage.setItem('cart', '{}');
         })
     })
-
 }

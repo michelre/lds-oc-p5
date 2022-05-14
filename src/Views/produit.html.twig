@@ -14,7 +14,7 @@
 
     <img src="/public/{{product.image}}" width="100%"/>
 
-    <p>{{product.description}}</p>
+    <div>{{product.description|raw}}</div>
 
      <form id="addToCart">
             <input type="hidden" name="id" value="{{product.id}}">
