@@ -17,20 +17,20 @@ class BackendController {
     }
 
     public function home(){
-        
+
         echo $this->twig->render('admin/index.html.twig', []);
         die();
     }
 
     public function listProducts(){
-         
+
         $products = $this->productDAO->getAll(0, 1000);
         echo $this->twig->render('admin/list-articles.html.twig', ['products' => $products]);
         die();
     }
 
     public function listOrders(){
-         
+
         $orders = $this->orderDAO->getAll(0, 1000);
         echo $this->twig->render('admin/list-orders.html.twig', ['orders' => $orders]);
         die();
@@ -58,7 +58,7 @@ class BackendController {
         } else {
             echo json_encode(['status' => 'KO']);
         }
-        
+
         die();
     }
 
@@ -80,7 +80,7 @@ class BackendController {
 
     public function updateProductForm($product, $files, $id) {
         $image = $files['image'];
-        $imageName = '';
+        $imageName = $product->old_image;
 
         if(isset($image) && !empty($image['tmp_name'])){
             $ext = explode('/', $image['type'])[1];

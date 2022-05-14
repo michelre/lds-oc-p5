@@ -33,6 +33,7 @@
                 <label>Image</label>
                 <input name="image"  type="file" />
 
+                <input type="hidden" name="old_image" value="{{ product.image }}">
                 <img src="/public/{{product.image}}" />
           </div>
 
