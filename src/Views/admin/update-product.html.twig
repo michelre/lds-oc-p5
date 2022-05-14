@@ -3,7 +3,7 @@
 {% block title %}Accueil{% endblock %}
 
 {% block content %}
-    
+
         <h1>Modifier {{product.title}}</h1>
 
         <form method="POST" action="/admin/products/{{product.id}}" enctype="multipart/form-data">
@@ -38,8 +38,15 @@
 
 
           <button type="submit">Modifier le produit</button>
-        
+
         </form>
-       
-    
+
+
+        <script type="text/javascript">
+            tinymce.init({
+                selector: 'textarea',
+                plugins: 'lists',
+                toolbar: 'numlist bullist'
+            });
+        </script>
 {% endblock %}
