@@ -113,8 +113,8 @@ $klein = new \Klein\Klein();
     });
 
     $klein->respond('/public/[*]', function($request, $response) {
-        $file = readfile(__DIR__ . '/' . $request->params()[1]);
         var_dump($request->params());
+        $file = readfile(__DIR__ . '/' . $request->params()[1]);
         $response->header('content-type', mime_content_type($file));
         $response->body($file);
         $response->send();
