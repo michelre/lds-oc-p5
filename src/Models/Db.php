@@ -16,7 +16,8 @@ class Db {
         try {
             $this->db = new \PDO("mysql:dbname={$db};host={$server}", $username, $password);
         } catch(\PDOException $e){
-            var_dump("Erreur de connexion à la base de données");
+            echo("Erreur de connexion à la base de données: {$e->getMessage()}");
+            die();
         }
     }
 
